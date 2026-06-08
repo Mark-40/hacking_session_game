@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #06070d;
+  color: #e7eaf3;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle starry-grid background for the dark UI */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(34, 255, 136, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0, 228, 255, 0.08), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 57, 194, 0.05), transparent 60%);
+  z-index: -1;
+}
+
+/* Reusable utility for a neon outline button */
+.btn-neon {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold
+         transition-all duration-150 ease-out
+         border border-neon-green/60 text-neon-green
+         hover:bg-neon-green/10 hover:shadow-neon active:scale-[0.98]
+         disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-neon-cyan {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold
+         transition-all duration-150 ease-out
+         border border-neon-cyan/60 text-neon-cyan
+         hover:bg-neon-cyan/10 hover:shadow-neon-cyan active:scale-[0.98]
+         disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-neon-magenta {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold
+         transition-all duration-150 ease-out
+         border border-neon-magenta/60 text-neon-magenta
+         hover:bg-neon-magenta/10 hover:shadow-neon-magenta active:scale-[0.98]
+         disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-medium
+         text-white/70 border border-white/10 hover:border-white/30 hover:text-white
+         transition-colors;
+}
+
+.card {
+  @apply rounded-2xl bg-bg-800/70 border border-white/5 backdrop-blur-sm;
+}
+
+/* Hide scrollbars where we use overflow but want a clean look */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }

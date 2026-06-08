@@ -1,0 +1,17 @@
+{
+  "name": "quick-mental-reset",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quick Mental Reset — Live Word Challenge. Real-time multiplayer Wordle for live presentations.",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -k -n server,client -c green,cyan \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "start": "concurrently -k -n server,client -c green,cyan \"npm --prefix server start\" \"npm --prefix client start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir C:\\\\Users\\\\MarkManzanilla\\\\Documents\\\\Wellevate_Applications\\\\Hacking_Session *)",
+      "PowerShell(npm install *)",
+      "PowerShell(npm *)",
+      "PowerShell(Start-Sleep -Seconds 3; try { \\(Invoke-WebRequest -Uri \"http://localhost:4000/healthz\" -TimeoutSec 5\\).Content } catch { \"ERROR: $\\($_.Exception.Message\\)\" })",
+      "Bash(curl *)",
+      "PowerShell(Get-NetTCPConnection *)",
+      "Bash(node smoke.js)",
+      "Bash(NODE_PATH=\"./client/node_modules\" node server/smoke.js)",
+      "Bash(node smoke-wordle.js)"
+    ]
+  }
+}
